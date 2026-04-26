@@ -1119,8 +1119,8 @@ h2 {
     display: block;
     width: auto;
     height: auto;
-    max-width: 85vw;
-    max-height: 85vh;
+    max-width: min(1920px, 96vw);
+    max-height: min(1080px, 96vh);
     border-radius: 10px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     object-fit: contain;
