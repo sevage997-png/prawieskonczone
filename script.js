@@ -229,7 +229,7 @@ contactForm.addEventListener('submit', function(e) {
     alert('Wiadomość została wysłana! ✅');
 
     emailjs.sendForm(
-        'service_kt9kxg4',     // Service ID
+        'service_6ele7lo',     // Service ID
         'template_df1tgom',   // Template ID
         this
     )
