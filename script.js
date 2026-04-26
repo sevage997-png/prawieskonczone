@@ -226,6 +226,7 @@ const contactForm = document.querySelector('.contact-form');
 
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
+    alert('Wiadomość została wysłana! ✅');
 
     emailjs.sendForm(
         'service_kt9kxg4',     // Service ID
@@ -233,7 +234,6 @@ contactForm.addEventListener('submit', function(e) {
         this
     )
     .then(() => {
-        alert('Wiadomość została wysłana! ✅');
         contactForm.reset();
         contactModal.classList.remove('active');
         contactModal.setAttribute('aria-hidden', 'true');
