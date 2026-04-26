@@ -223,12 +223,25 @@ if (serviceModal) {
 
 // Contact form
 const contactForm = document.querySelector('.contact-form');
-contactForm.addEventListener('submit', (e) => {
+
+contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Dziękujemy za wiadomość! Skontaktujemy się wkrótce.');
-    contactForm.reset();
-    contactModal.classList.remove('active');
-    contactModal.setAttribute('aria-hidden', 'true');
+
+    emailjs.sendForm(
+        'service_kt9kxg4',     // Service ID
+        'template_df1tgom',   // Template ID
+        this
+    )
+    .then(() => {
+        alert('Wiadomość została wysłana! ✅');
+        contactForm.reset();
+        contactModal.classList.remove('active');
+        contactModal.setAttribute('aria-hidden', 'true');
+    })
+    .catch((error) => {
+        console.error('Błąd:', error);
+        alert('Wystąpił błąd podczas wysyłania ❌');
+    });
 });
 
 // Animate on scroll - reveal elements
